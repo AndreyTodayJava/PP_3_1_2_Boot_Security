@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         userRepository.save(newUser);
     }
 
-//    @Transactional
+    //    @Transactional
 //    public void update(int id, User user, Set<String> listOfRoles) {
 //        User updatedUser = userRepository.getById(id);
 //        updatedUser.setUsername(user.getUsername());
