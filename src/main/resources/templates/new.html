@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New User</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">PreProject 3.1.3</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<div class = "container">
+  <div class = "row">
+    <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+      <h1 class = "text-center"> Create New User </h1>
+      <div class = "card-body">
+        <form th:action="@{/admin}" th:object = "${user}" th:method="POST">
+          <div class ="form-group text-center">
+<!--            <label> Name </label>-->
+            <label class="control-label font-weight-bold ">First
+              Name</label>
+            <input
+                    type = "text"
+                    name = "firstName"
+                    th:field = "*{username}"
+                    class = "form-control"
+                    placeholder="Enter User Name"
+            />
+          </div>
+
+          <div class ="form-group text-center">
+            <label class="control-label font-weight-bold "> Lastname </label>
+            <input
+                    type = "text"
+                    name = "lastName"
+                    th:field = "*{lastName}"
+                    class = "form-control"
+                    placeholder="Enter User Last Name"
+            />
+          </div>
+
+          <div class ="form-group text-center">
+            <label class="control-label font-weight-bold "> Age </label>
+            <input
+                    type = "number"
+                    name = "age"
+                    th:field = "*{age}"
+                    class = "form-control"
+                    placeholder="Enter User age"
+            />
+          </div>
+
+          <div class ="form-group text-center">
+            <label class="control-label font-weight-bold "> Email </label>
+            <input
+                    type = "text"
+                    name = "email"
+                    th:field = "*{email}"
+                    class = "form-control"
+                    placeholder="Enter User Email"
+            />
+          </div>
+
+          <div class ="form-group text-center">
+            <label class="control-label font-weight-bold "> Password </label>
+            <input
+                    type = "text"
+                    name = "password"
+                    th:field = "*{password}"
+                    class = "form-control"
+                    placeholder="Enter User password"
+            />
+          </div>
+
+          <div class="form-group text-center">
+            <label for="roles"
+                   class="font-weight-bold"> Role </label>
+            <select class="form-control"
+                    name="rolesName" id="roles"
+                    size="2"
+                    multiple>
+              <option th:value="ROLE_USER"
+                      th:text="USER"></option>
+              <option th:value="ROLE_ADMIN"
+                      th:text="ADMIN"></option>
+            </select>
+          </div>
+
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-success btn-lg">Add new User</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -13,7 +13,7 @@
             <div class="me-auto">
                 <span th:utext="${user.getEmail()}" class="font-weight-bold"></span>
                 <span> with roles:</span>
-                <span th:each="role : ${user.getRoles()}" th:text="${role.getAuthority()}" class="mx-1"></span>
+                <span th:each="role : ${user.getRoles()}" th:text="${role.getViewName()}" class="mx-1"></span>
             </div>
             <a class="nav-link"  href="/logout">Logout</a>
         </div>
@@ -86,8 +86,8 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="name" class="font-weight-bold">First name</label>
-                                                    <input type="text" class="form-control" th:value="${user.getUsername()}" name="name" id="name">
+                                                    <label for="username" class="font-weight-bold">First name</label>
+                                                    <input type="text" class="form-control" th:value="${user.getUsername()}" name="username" id="username">
                                                 </div>
 
                                                 <div class="form-group">
@@ -106,15 +106,9 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="username" class="font-weight-bold">Username</label>
-                                                    <input type="text" class="form-control" th:value="${user.username}" name="username" id="username">
-                                                </div>
-
-                                                <div class="form-group">
                                                     <label for="password" class="font-weight-bold">Password</label>
-                                                    <input type="password" class="form-control" name="password" id="password">
+                                                    <input type="password" class="form-control"  name="password" id="password">
                                                 </div>
-
 
                                                 <div class="form-group text-center">
                                                     <label for="roles" class="font-weight-bold">Role</label>

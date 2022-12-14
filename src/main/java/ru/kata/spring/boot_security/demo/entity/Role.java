@@ -52,9 +52,13 @@ public class Role implements GrantedAuthority {
         this.name = name;
     }
 
+    public String getViewName() {
+        return name.replaceAll("ROLE_", "");
+    }
+
     @Override
     public String getAuthority() {
-        return name.replaceAll("ROLE_", "");
+         return getName();
     }
 
     @Override
